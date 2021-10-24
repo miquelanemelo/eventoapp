@@ -15,13 +15,12 @@
 </head>
 <body>
 	<h1>Evento</h1>
-	<h3>
-		<a href="/evento" class="waves-effect waves-light btn"><i
-			class="material-icons left">add_circle_outline</i>Lista de evento</a></h3>
+	<h3><a href="/evento" class="waves-effect waves-light btn"><i
+		class="material-icons left">add_circle_outline</i>Lista de Evento</a></h3>
 			
-	<div th:each="evento : ${evento}" class = "container">
+	<div th:each="evento:${evento}" class = "container">
 		<div class = "row">
-		<p>Nome: <span th:text="${evento.nome}"></span></p>
+		<p>Nome: <span th:text="${evento.nome}"></span></p> <!-- tag span se usa pois estamos acessando um objeto -->
 		<p>Local: <span th:text="${evento.local}"></span></p>
 		<p>Data: <span th:text="${evento.data}"></span></p>
 		<p>Horario: <span th:text="${evento.horario}"></span></p>
@@ -33,8 +32,6 @@
 		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
 		</form>
 	</div>		
-			
-
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 
