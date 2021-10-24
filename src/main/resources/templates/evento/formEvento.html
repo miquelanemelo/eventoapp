@@ -21,22 +21,24 @@
 		<a th:href="@{/eventos/}" class="waves-effect waves-light btn"><i
 			class="material-icons left">format_list_bulleted</i>Lista de Eventos</a>
 	</h3>
-	<form class="container" method="post">
-		Nome: <input type="text" value="" name="nome" />
-		<div class="row">
-			<div class="input.field col s6">
-				<!-- acrescenta coluna nas linhas, cada linha pode ter no quantas colunas, mas limitada a 12 -->
-				Local: <input type="text" value="" name="local" />
+	<div class="container">
+		<form action="#" th:action="@{cadastrar}" th:object="${evento}"  method="post">
+			Nome: <input type="text" th:field="*{nome}" />
+			<div class="row">
+				<div class="input.field col s6">
+					Local: <input type="text" th:field="*{local}" />
+				</div>
+				<div class="input.field col s3">
+					Data: <input type="date" th:field="*{data}"/>
+				</div>
+				<div class="input.field col s3">
+					Horário: <input type="text" th:field="*{horario}" />
+				</div>
 			</div>
-			<div class="input.field col s3">
-				Data: <input type="date" value="" name="data" />
-			</div>
-			<div class="input.field col s3">
-				Horário: <input type="text" value="" name="horario" />
-			</div>
-		</div>
-		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
-	</form>
+			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+		</form>
+	</div>
+
 
 	<script type="text/javascript"
 		th:src="@{/materialize/js/materialize.min.js}" /></script>
