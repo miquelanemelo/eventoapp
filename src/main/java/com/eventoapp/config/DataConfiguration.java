@@ -17,10 +17,8 @@ public class DataConfiguration {
 		dataSource.setUrl("jdbc:mysql://localhost:3306/eventosapp");
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
-		return dataSource;
-		
+		return dataSource;		
 	}
-
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
